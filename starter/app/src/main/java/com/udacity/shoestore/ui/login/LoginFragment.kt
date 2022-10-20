@@ -12,7 +12,7 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.udacity.shoestore.R
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -28,8 +28,10 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
+
         return binding.root
     }
 
@@ -50,7 +52,6 @@ class LoginFragment : Fragment() {
                     return@Observer
                 }
                 loginButton.isEnabled = loginFormState.isDataValid
-                registerButton.isEnabled = loginFormState.isDataValid
                 loginFormState.usernameError?.let {
                     usernameEditText.error = getString(it)
                 }
@@ -67,7 +68,7 @@ class LoginFragment : Fragment() {
                     showLoginFailed(it)
                 }
                 loginResult.success?.let {
-                    updateUiWithUser(it)
+                    navigateToWelcomeFragment(it)
                 }
             })
 
@@ -115,11 +116,9 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun updateUiWithUser(model: LoggedInUserView) {
-        val welcome = getString(R.string.welcome) + model.displayName
-        // TODO : initiate successful logged in experience
-        val appContext = context?.applicationContext ?: return
-        Toast.makeText(appContext, welcome, Toast.LENGTH_LONG).show()
+    private fun navigateToWelcomeFragment(loggedInUserView: LoggedInUserView) {
+        val action = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment(loggedInUserView.displayName)
+        findNavController().navigate(action)
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
