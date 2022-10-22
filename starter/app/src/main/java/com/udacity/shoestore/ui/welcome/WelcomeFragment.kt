@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentWelcomeBinding
@@ -32,10 +33,20 @@ class WelcomeFragment : Fragment() {
 
         binding.welcomeUsernameTextView.text =
             getString(R.string.welcome_username, arguments.username)
+
+        binding.continueButton.setOnClickListener {
+            navigateToWelcomeFragment()
+        }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
+    }
+
+
+    private fun navigateToWelcomeFragment() {
+        val action = WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment()
+        findNavController().navigate(action)
     }
 }

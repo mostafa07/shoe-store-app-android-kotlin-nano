@@ -13,7 +13,8 @@
 
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
-            app:destination="@id/welcomeFragment" />
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -25,6 +26,18 @@
         <argument
             android:name="username"
             app:argType="string" />
+
+        <action
+            android:id="@+id/action_welcomeFragment_to_instructionFragment"
+            app:destination="@id/instructionFragment"
+            app:popUpTo="@id/welcomeFragment" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/instructionFragment"
+        android:name="com.udacity.shoestore.ui.instruction.InstructionFragment"
+        android:label="InstructionFragment"
+        tools:layout="@layout/fragment_instruction" />
 
 </navigation>

@@ -18,4 +18,7 @@
     <string name="welcome_username">Welcome, %1$s</string>
     <string name="prompt_continue">Continue</string>
 
+    <!-- Instruction Fragment -->
+    <string name="instructions_text">Welcome to our shoe store app. Continue on to the next screen to view list of the products</string>
+
 </resources>
