@@ -21,4 +21,7 @@
     <!-- Instruction Fragment -->
     <string name="instructions_text">Welcome to our shoe store app. Continue on to the next screen to view list of the products</string>
 
+    <!-- Shoe List Fragment -->
+    <string name="action_add">add</string>
+
 </resources>

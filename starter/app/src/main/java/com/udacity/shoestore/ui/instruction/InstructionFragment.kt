@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
 class InstructionFragment : Fragment() {
 
-    private var _binding: FragmentInstructionBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var _binding: FragmentInstructionBinding
+    private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,8 +24,12 @@ class InstructionFragment : Fragment() {
         return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.continueButton.setOnClickListener {
+            val action = InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment()
+            findNavController().navigate(action)
+        }
     }
 }
