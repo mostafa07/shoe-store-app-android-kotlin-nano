@@ -12,8 +12,7 @@ import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
 
-    private var _binding: FragmentWelcomeBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentWelcomeBinding
 
     private val arguments: WelcomeFragmentArgs by navArgs()
 
@@ -22,7 +21,7 @@ class WelcomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        binding = FragmentWelcomeBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
 
         return binding.root
@@ -31,17 +30,11 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.welcomeUsernameTextView.text =
-            getString(R.string.welcome_username, arguments.username)
+        binding.welcomeUsernameTextView.text = getString(R.string.welcome_username, arguments.username)
 
         binding.continueButton.setOnClickListener {
             navigateToWelcomeFragment()
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
 

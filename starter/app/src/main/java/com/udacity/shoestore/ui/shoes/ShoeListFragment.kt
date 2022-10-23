@@ -14,9 +14,7 @@ import com.udacity.shoestore.databinding.FragmentShoeListBinding
 
 class ShoeListFragment : Fragment() {
 
-    private lateinit var _binding: FragmentShoeListBinding
-    private val binding
-        get() = _binding
+    private lateinit var binding: FragmentShoeListBinding
 
     private val shoesViewModel: ShoesViewModel by lazy {
         ViewModelProvider(requireActivity()).get(ShoesViewModel::class.java)
@@ -28,7 +26,7 @@ class ShoeListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentShoeListBinding.inflate(inflater, container, false)
+        binding = FragmentShoeListBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.shoesViewModel = shoesViewModel
 

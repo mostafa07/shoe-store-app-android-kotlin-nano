@@ -10,15 +10,14 @@ import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
 class InstructionFragment : Fragment() {
 
-    private lateinit var _binding: FragmentInstructionBinding
-    private val binding get() = _binding
+    private lateinit var binding: FragmentInstructionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentInstructionBinding.inflate(inflater, container, false)
+        binding = FragmentInstructionBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
 
         return binding.root
