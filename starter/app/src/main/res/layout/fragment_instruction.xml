@@ -10,7 +10,7 @@
         android:paddingTop="@dimen/screen_vertical_margin"
         android:paddingRight="@dimen/screen_horizontal_margin"
         android:paddingBottom="@dimen/screen_vertical_margin"
-        tools:context=".ui.instruction.InstructionFragment">
+        tools:context=".ui.onboarding.InstructionFragment">
 
         <ImageView
             android:id="@+id/logo_image_view"

@@ -1,4 +1,4 @@
-package com.udacity.shoestore.ui.login
+package com.udacity.shoestore.ui.onboarding
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

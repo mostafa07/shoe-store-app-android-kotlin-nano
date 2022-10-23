@@ -1,4 +1,4 @@
-package com.udacity.shoestore.ui.login
+package com.udacity.shoestore.ui.onboarding
 
 /**
  * Data validation state of the login form.

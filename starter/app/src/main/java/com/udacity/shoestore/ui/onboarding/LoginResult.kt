@@ -1,4 +1,4 @@
-package com.udacity.shoestore.ui.login
+package com.udacity.shoestore.ui.onboarding
 
 /**
  * Authentication result : success (user details) or error message.
