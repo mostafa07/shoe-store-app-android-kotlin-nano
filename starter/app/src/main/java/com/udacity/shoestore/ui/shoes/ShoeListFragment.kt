@@ -9,17 +9,14 @@ import android.widget.LinearLayout.LayoutParams.MATCH_PARENT
 import android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 
 class ShoeListFragment : Fragment() {
 
     private lateinit var binding: FragmentShoeListBinding
-
-    private val shoesViewModel: ShoesViewModel by lazy {
-        ViewModelProvider(requireActivity()).get(ShoesViewModel::class.java)
-    }
+    private val shoesViewModel: ShoesViewModel by activityViewModels()
 
 
     override fun onCreateView(
