@@ -12,12 +12,14 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
+        app:menu="@menu/menu_shoe_list"
         android:layout_height="match_parent"
         tools:context=".ui.shoes.ShoeListFragment">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fillViewport="true"
             android:paddingLeft="@dimen/screen_horizontal_margin"
             android:paddingTop="@dimen/screen_vertical_margin"
             android:paddingRight="@dimen/screen_horizontal_margin"

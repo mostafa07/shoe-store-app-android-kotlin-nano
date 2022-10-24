@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Shoe Store</string>
 
+    <!-- Screen Labels -->
+    <string name="label_fragment_login">Login</string>
+    <string name="label_fragment_welcome">Welcome</string>
+    <string name="label_fragment_instruction">Instructions</string>
+    <string name="label_fragment_shoe_list">Shoes List</string>
+    <string name="label_fragment_shoe_detail">Add Shoe</string>
+
     <!-- Common -->
     <string name="welcome">"Welcome"</string>
     <string name="cancel">Cancel</string>
@@ -24,6 +31,7 @@
 
     <!-- Shoe List Fragment -->
     <string name="action_add">add</string>
+    <string name="action_logout">Logout</string>
 
     <!-- Shoe Detail Fragment -->
     <string name="label_name">Name</string>
